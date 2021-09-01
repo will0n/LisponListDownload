@@ -7,7 +7,7 @@ You need to intall __Selenium, lxml, BeautifulSoup4__
 
 Chrome browser and chromedriver.exe is needed.
 
-__You have to specify the location of chrome.exe and chromedriver.exe in the script first.__
+__You have to specify the locations of chrome.exe and chromedriver.exe in the script first.__
 
 ## Usage
 
