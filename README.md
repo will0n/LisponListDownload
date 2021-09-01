@@ -15,4 +15,4 @@ LisponListDownload.py -o FILE -d DIR \<LISTID\>
 
 Use "aria2 --input-file=FILE" to download these audios.
 
-The default OUTPUT name is __download.txt__, and the default DIR name is title of the list.
+The default FILE name is __download.txt__, and the default DIR name is title of the list.
