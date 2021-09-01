@@ -7,15 +7,44 @@ from bs4 import BeautifulSoup
 from bs4 import Comment
 import lxml
 import re
+import getopt
+from sys import argv
+from sys import exit
 
-url = "http://lispon.moe/lispon/fe/act170531/voice?vc_id=74552"
+BIN_LOC = r'' #put full path of chrome.exe here
+DR_LOC = r'' #put full path of chromedriver.exe here
+#BIN_LOC = r'D:\Portable\GoogleChromePortable\App\Chrome-bin\chrome.exe'
+#DR_LOC = r'D:\Portable\GoogleChromePortable\App\Chrome-bin\chromedriver.exe'
+if not (BIN_LOC and DR_LOC):
+    print('Please specify you location of chrome.exe and chromedriver.exe as BIN_LOC and DR_LOC')
+    exit(2)
+    
+try:
+  opts, args = getopt.getopt(argv[1:],"o:d:")
+except getopt.GetoptError:
+  print('LisponListDownload.py -o OUTPUT -d DIR <LISTID>')
+  exit(2)
+
+output = ''
+dir = ''
+for opt,arg in opts:
+    if opt == '-o':
+        output = arg
+    elif opt == '-d':
+        dir = arg
+
+if not output:
+    output = 'download.txt'
+url = 'http://lispon.moe/lispon/fe/act170531/voice?vc_id='+args[0]
+#url = "http://lispon.moe/lispon/fe/act170531/voice?vc_id=74552"
+
 options = webdriver.ChromeOptions()
 options.add_argument("--headless")
 options.add_argument("--disable-gpu")
 prefs = {"profile.managed_default_content_settings.images": 2}
 options.add_experimental_option("prefs", prefs) #disable image loading
-options.binary_location = r'D:\Portable\GoogleChromePortable\App\Chrome-bin\chrome.exe'
-driverpath = r'D:\Portable\GoogleChromePortable\App\Chrome-bin\chromedriver.exe'
+options.binary_location = BIN_LOC
+driverpath = DR_LOC
 driver = webdriver.Chrome(driverpath, options=options)
 driver.get(url)
 delay = 10 # seconds
@@ -31,9 +60,11 @@ driver.close()
 #print(soup.prettify())
 
 songtitles = soup.select("div#songList h3")
-f = open('download.txt', mode='w', encoding='utf-8')
+f = open(output, mode='w', encoding='utf-8')
+#f = open('download.txt', mode='w', encoding='utf-8')
 titles = []
-dir = 'dir'
+if not dir:
+    dir = soup.select_one('h1.header-title').text
 for h in songtitles:
     titles.append(h.text)
 c = soup.select_one("div#songList").find_all(string=lambda text: isinstance(text, Comment))
