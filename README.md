@@ -15,7 +15,7 @@ LisponListDownload.py -o FILE -d DIR \<LISTID\>
 
 Then urls are saved in a form like
 
->http://s.lispon.moe/lispon/vaqa/2019/04/23/\*\*\*\*.m4a
+>http://s.lispon.moe/lispon/vaqa/2019/04/23/****.m4a
 >
 >&nbsp;&nbsp;&nbsp;&nbsp; dir=DIR 	 
 >	 
