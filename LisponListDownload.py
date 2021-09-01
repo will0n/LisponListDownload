@@ -13,8 +13,8 @@ from sys import exit
 
 BIN_LOC = r'' #put full path of chrome.exe here
 DR_LOC = r'' #put full path of chromedriver.exe here
-#BIN_LOC = r'D:\Portable\GoogleChromePortable\App\Chrome-bin\chrome.exe'
-#DR_LOC = r'D:\Portable\GoogleChromePortable\App\Chrome-bin\chromedriver.exe'
+#BIN_LOC = r'D:\Portable\GoogleChromePortable\App\Chrome-bin\chrome.exe' #example here
+#DR_LOC = r'D:\Portable\GoogleChromePortable\App\Chrome-bin\chromedriver.exe' #example here
 if not (BIN_LOC and DR_LOC):
     print('Please specify you location of chrome.exe and chromedriver.exe as BIN_LOC and DR_LOC')
     exit(2)
