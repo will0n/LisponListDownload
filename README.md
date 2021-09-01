@@ -15,11 +15,11 @@ LisponListDownload.py -o FILE -d DIR \<LISTID\>
 
 Then urls are saved in a form like
 
->http://s.lispon.moe/lispon/vaqa/2019/04/23/rotoaxa-atIDvTkLGMP.WAV.m4a
+>http://s.lispon.moe/lispon/vaqa/2019/04/23/\*\*\*\*.m4a
 >
->&nbsp;&nbsp;&nbsp;&nbsp; dir=はとむぎASMR【全て】 	 
+>&nbsp;&nbsp;&nbsp;&nbsp; dir=DIR 	 
 >	 
->&nbsp;&nbsp;&nbsp;&nbsp; output=はとむぎ化粧水で耳のマッサージ.m4a
+>&nbsp;&nbsp;&nbsp;&nbsp; output=\<audio name\>.m4a
 
 Use "aria2 --input-file=FILE" to download these audios.
 
