@@ -11,7 +11,7 @@ __You have to specify the location of chrome.exe and chromedriver.exe in the scr
 
 ## Usage
 
-LisponListDownload.py -o FILE -d DIR <LISTID>
+LisponListDownload.py -o FILE -d DIR \<LISTID\>
 
 Use "aria2 --input-file=FILE" to download these audios.
 
