@@ -1,5 +1,5 @@
 # LisponListDownload
-Extract audio urls from a Lispon list and save to a text file.
+Extract audio urls from a Lispon list and save them to a text file.
 
 ## Requirement:
 
