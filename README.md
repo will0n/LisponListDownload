@@ -11,7 +11,7 @@ __You have to specify the locations of chrome.exe and chromedriver.exe in the sc
 
 ## Usage
 
-LisponListDownload.py -o FILE -d DIR \<LISTID\>
+LisponListDownload.py [-o FILE] [-d DIR] \<LISTID\>
 
 Then urls are saved in a form like
 
